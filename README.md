@@ -1,6 +1,6 @@
 # Backend Projects
 
-## Beginner Project
+## Beginner Projects
 
 ### [CRUD with PHP and JSON](https://github.com/ZeinaZayed4/backend-projects/tree/main/beginner/01-%20CRUD)
 - Features:
