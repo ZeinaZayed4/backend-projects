@@ -16,3 +16,11 @@
   - Delete tasks.
 
 ### [PHP Registration Form Validation](https://github.com/ZeinaZayed4/backend-projects/tree/main/beginner/Registration%20Form%20Validation)
+
+### [Authentication System with OOP PHP & MySQL](https://github.com/ZeinaZayed4/backend-projects/tree/main/beginner/OOP%20Login%20System)
+- Features:
+  - Signup.
+  - Login.
+  - Logout.
+  - Simple input validation.
+
