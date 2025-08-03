@@ -24,3 +24,9 @@
   - Logout.
   - Simple input validation.
 
+### [PHP OOP with MySQL Notes App](https://github.com/ZeinaZayed4/backend-projects/tree/main/beginner/Notes)
+- Features:
+  - Show notes
+  - Create note.
+  - Update note.
+  - Delete note.
