@@ -47,8 +47,9 @@ if (mysqli_num_rows($result) > 0) {
                             <td><?= $admin['full_name'] ?></td>
                             <td><?= $admin['username'] ?></td>
                             <td>
-                                <a href="#" class="btn-secondary">Update</a>
-                                <a href="#" class="btn-danger">Delete</a>
+                                <a href="update_password.php?id=<?= $admin['id'] ?>" class="btn-primary">Change Password</a>
+                                <a href="update_admin.php?id=<?= $admin['id'] ?>" class="btn-secondary">Update</a>
+                                <a href="handle/handle_delete_admin.php?id=<?= $admin['id'] ?>" class="btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach;?>

@@ -44,6 +44,7 @@ table tr td {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -51,11 +52,13 @@ table tr td {
 }
 
 .btn-secondary {
+    width: auto;
     background-color: #7bed9f;
-    padding: 2%;
+    padding: 1%;
     color: #2d3436;
     text-decoration: none;
     border-radius: 5px;
+    border: none;
 }
 
 .btn-secondary:hover {
@@ -64,7 +67,7 @@ table tr td {
 
 .btn-danger {
     background-color: #ff6b81;
-    padding: 2%;
+    padding: 1%;
     color: #2d3436;
     text-decoration: none;
     border-radius: 5px;
@@ -75,12 +78,18 @@ table tr td {
 }
 
 .input-responsive {
-    width: 50%;
-    padding: 2%;
+    width: 25%;
+    padding: 0.7%;
     margin-bottom: 3%;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.admin-label {
+    margin-bottom: 1%;
+    margin-right: 1%;
+    font-weight: bold;
 }
 
 /* CSS for menu */
