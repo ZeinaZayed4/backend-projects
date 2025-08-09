@@ -1,3 +1,5 @@
+<?php require_once 'handle/login_check.php' ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +20,7 @@
 				<li><a href="manage_category.php">Category</a></li>
 				<li><a href="manage_food.php">Food</a></li>
 				<li><a href="manage_order.php">Order</a></li>
+				<li><a href="handle/handle_logout.php">Logout</a></li>
 			</ul>
 		</div>
 	</div>

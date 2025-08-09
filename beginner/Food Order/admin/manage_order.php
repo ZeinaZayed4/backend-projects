@@ -1,4 +1,4 @@
-<?php include_once 'partials/menu.php' ?>
+<?php session_start(); include_once 'partials/menu.php' ?>
 
 	<!-- Main Section Starts -->
 	<div class="main-content">
