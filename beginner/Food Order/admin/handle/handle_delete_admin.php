@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once '../../config/constants.php';
 
 if (isset($_GET['id'])) {
