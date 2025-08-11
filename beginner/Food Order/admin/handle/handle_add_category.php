@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	$featured = trim(htmlspecialchars($_POST['featured']));
 	$active = trim(htmlspecialchars($_POST['active']));
 	
-	if (isset($_FILES['image']['name'])) {
+	if (! empty($_FILES['image']['name'])) {
 		$image = $_FILES['image'];
 		$image_name = $image['name'];
 		$tmp_name = $image['tmp_name'];
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 			exit();
 		}
 	} else {
-		$image_name = "";
+		$new_image_name = "";
 	}
 	
 	$query = "INSERT INTO `categories` (`title`, `image_name`, `featured`, `active`) VALUES ('$title', '$new_image_name', '$featured', '$active')";

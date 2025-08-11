@@ -51,15 +51,15 @@ if (mysqli_num_rows($result) > 0) {
                             <td><?= $category['title'] ?></td>
                             <td>
 								<?php if(! empty($category['image_name'])): ?>
-                                    <img src="uploads/<?= $category['image_name'] ?>" width="75px" height="75px"></td>
+                                    <img src="uploads/<?= $category['image_name'] ?>" width="75px" height="75px" alt=""></td>
                                 <?php else: ?>
                                     <p style="color: red">No image was added!</p>
                                 <?php endif; ?>
                             <td><?= $category['featured'] ?></td>
                             <td><?= $category['active'] ?></td>
                             <td>
-                                <a href="#" class="btn-secondary">Update</a>
-                                <a href="#" class="btn-danger">Delete</a>
+                                <a href="update_category.php?id=<?= $category['id'] ?>" class="btn-secondary">Update</a>
+                                <a href="handle/handle_delete_category.php?id=<?= $category['id'] ?>&image_name=<?= $category['image_name'] ?>" class="btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
