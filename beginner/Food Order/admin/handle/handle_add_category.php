@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 		$tmp_name = $image['tmp_name'];
 		$ext = pathinfo($image_name, PATHINFO_EXTENSION);
 		$new_image_name = 'food_category_' . uniqid() . '.' . $ext;
-		$path = "../uploads/$new_image_name";
+		$path = "../uploads/category/$new_image_name";
 		$uploaded = move_uploaded_file($tmp_name, $path);
 		
 		if (! $uploaded) {

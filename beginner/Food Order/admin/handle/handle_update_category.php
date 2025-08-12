@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		$tmp_name = $image['tmp_name'];
 		$ext = pathinfo($image_name, PATHINFO_EXTENSION);
 		$new_image_name = 'food_category_' . uniqid() . '.' . $ext;
-		$path = "../uploads/$new_image_name";
+		$path = "../uploads/category/$new_image_name";
 		$uploaded = move_uploaded_file($tmp_name, $path);
 		
 		if (! $uploaded) {
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 		}
 		
 		if (! empty($current_image)) {
-			if (! unlink("../uploads/$current_image")) {
+			if (! unlink("../uploads/category/$current_image")) {
 				$_SESSION['error'] = 'Failed to remove current image';
 				header('Location: ../manage_category.php');
 				exit();

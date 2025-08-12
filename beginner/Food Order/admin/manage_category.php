@@ -43,7 +43,9 @@ if (mysqli_num_rows($result) > 0) {
                 </tr>
                 
                 <?php if ($not_found): ?>
-                    <p>No categories found!</p>
+                    <td>
+                        <p style="color: red">No category found!</p>
+                    </td>
                 <?php else: ?>
                     <?php foreach ($categories as $category): ?>
                         <tr>
@@ -51,10 +53,11 @@ if (mysqli_num_rows($result) > 0) {
                             <td><?= $category['title'] ?></td>
                             <td>
 								<?php if(! empty($category['image_name'])): ?>
-                                    <img src="uploads/<?= $category['image_name'] ?>" width="75px" height="75px" alt=""></td>
+                                    <img src="uploads/category/<?= $category['image_name'] ?>" width="75px" height="75px" alt="">
                                 <?php else: ?>
                                     <p style="color: red">No image was added!</p>
                                 <?php endif; ?>
+                            </td>
                             <td><?= $category['featured'] ?></td>
                             <td><?= $category['active'] ?></td>
                             <td>
