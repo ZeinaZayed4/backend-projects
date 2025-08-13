@@ -60,8 +60,8 @@ if (mysqli_num_rows($result) > 0) {
                             <td><?= $food['featured'] ?></td>
                             <td><?= $food['active'] ?></td>
                             <td>
-                                <a href="#" class="btn-secondary">Update</a>
-                                <a href="#" class="btn-danger">Delete</a>
+                                <a href="update_food.php?id=<?= $food['id'] ?>" class="btn-secondary">Update</a>
+                                <a href="handle/handle_delete_food.php?id=<?= $food['id'] ?>&image_name=<?= $food['image_name'] ?>" class="btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

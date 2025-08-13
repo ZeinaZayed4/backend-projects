@@ -8,7 +8,7 @@ if (isset($_GET['id']) && isset($_GET['image_name'])) {
 	$image_name = $_GET['image_name'];
 	
 	if (! empty($image_name)) {
-		$path = "../uploads/$image_name";
+		$path = "../uploads/category/$image_name";
 		
 		if (! unlink($path)) {
 			$_SESSION['error'] = 'Failed to delete the image';
