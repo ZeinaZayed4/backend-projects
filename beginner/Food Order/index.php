@@ -27,7 +27,7 @@ if (mysqli_num_rows($result_menu) > 0) {
 
             <?php if (! empty($categories)): ?>
                 <?php foreach ($categories as $category): ?>
-                    <a href="#">
+                    <a href="category-foods.php?id=<?= $category['id'] ?>">
                         <div class="box-3 float-container">
                             <img src="admin/uploads/category/<?= $category['image_name'] ?>" alt="<?= $category['title'] ?>" class="img-responsive img-curve">
             

@@ -1,9 +1,24 @@
-<?php include 'partials/menu.php'; ?>
+<?php
+
+include 'partials/menu.php';
+
+if (isset($_POST['submit'])) {
+    $search = trim($_POST['search']);
+    
+    $query = "SELECT * FROM `food` WHERE `title` LIKE '%$search%' OR `description` LIKE '%$search%'";
+    $result = mysqli_query($conn, $query);
+    
+    if (mysqli_num_rows($result) > 0) {
+        $all_food = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+}
+
+?>
 
     <!-- food Search Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
-            <h2>Foods on Your Search <a href="#" class="text-white">"Momo"</a></h2>
+            <h2>Foods on Your Search <a href="#" class="text-white">"<?= $search ?>"</a></h2>
         </div>
     </section>
     <!-- food Search Section Ends Here -->
@@ -13,107 +28,30 @@
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
 
+            <?php if (! empty($all_food)): ?>
+                <?php foreach ($all_food as $food): ?>
+                    <div class="food-menu-box">
+                    <div class="food-menu-img">
+                        <img src="admin/uploads/food/<?= $food['image_name'] ?>" alt="<?= $food['title'] ?>" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <h4><?= $food['title'] ?></h4>
+                        <p class="food-price">$<?= $food['price'] ?></p>
+                        <p class="food-detail">
+							<?= $food['description'] ?>
+                        </p>
+                        <br>
+    
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            <?php else: ?>
             <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicken Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Food Title</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
+                <p style="color: red">Food Not Found</p>
             </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-burger.jpg" alt="Chicken Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Smoky Burger</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-burger.jpg" alt="Chicken Burger" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Nice Burger</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicken Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Food Title</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicken Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Food Title</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-momo.jpg" alt="Chicken Momo" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Steam Momo</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+            <?php endif; ?>
             <div class="clearfix"></div>
         </div>
     </section>
