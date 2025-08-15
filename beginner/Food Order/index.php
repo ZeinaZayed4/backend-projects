@@ -24,7 +24,18 @@ if (mysqli_num_rows($result_menu) > 0) {
     <section class="categories">
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
-
+			
+			<?php if (isset($_SESSION['success'])): ?>
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?>
+                    </p>
+                </div>
+			<?php elseif (isset($_SESSION['error'])): ?>
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p>
+                </div>
+			<?php endif; ?>
+            
             <?php if (! empty($categories)): ?>
                 <?php foreach ($categories as $category): ?>
                     <a href="category-foods.php?id=<?= $category['id'] ?>">
@@ -65,7 +76,7 @@ if (mysqli_num_rows($result_menu) > 0) {
 								<?= $food['description'] ?>
                             </p>
                             <br>
-                            <a href="order.php" class="btn btn-primary">Order Now</a>
+                            <a href="order.php?food_id=<?= $food['id'] ?>" class="btn btn-primary">Order Now</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

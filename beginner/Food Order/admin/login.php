@@ -14,9 +14,14 @@
 		<br /> <br/>
 		
 		<?php if (isset($_SESSION['success'])): ?>
-			<p class="text-center" style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?></p><br /><br />
+            <div style="padding: 2%; text-align: center">
+                <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?>
+                </p>
+            </div>
 		<?php elseif (isset($_SESSION['error'])): ?>
-			<p class="text-center" style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p><br /><br />
+            <div style="padding: 2%; text-align: center">
+                <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p>
+            </div>
 		<?php endif; ?>
 		
 		<!-- Login Form Starts Here -->

@@ -22,12 +22,17 @@ if (mysqli_num_rows($result) > 0) {
 		<div class="wrapper">
 			<h1>Manage Admin</h1>
             <br /> <br/>
-            
-            <?php if (isset($_SESSION['success'])): ?>
-                <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?></p><br /><br />
-            <?php elseif (isset($_SESSION['error'])): ?>
-                <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p><br /><br />
-            <?php endif; ?>
+			
+			<?php if (isset($_SESSION['success'])): ?>
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?>
+                    </p>
+                </div>
+			<?php elseif (isset($_SESSION['error'])): ?>
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p>
+                </div>
+			<?php endif; ?>
 
             <a href="add_admin.php" class="btn-primary">Add Admin</a>
             <br /> <br /> <br />

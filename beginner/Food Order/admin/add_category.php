@@ -6,9 +6,14 @@
 			<br /><br />
 			
 			<?php if (isset($_SESSION['success'])): ?>
-                <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?></p><br /><br />
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: green"><?= $_SESSION['success']; unset($_SESSION['success']) ?>
+                    </p>
+                </div>
 			<?php elseif (isset($_SESSION['error'])): ?>
-                <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p><br /><br />
+                <div style="padding: 2%; text-align: center">
+                    <p style="color: red"><?= $_SESSION['error']; unset($_SESSION['error']) ?></p>
+                </div>
 			<?php endif; ?>
    
 			<form action="handle/handle_add_category.php" method="post" enctype="multipart/form-data">

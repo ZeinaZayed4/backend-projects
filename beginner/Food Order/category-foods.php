@@ -49,7 +49,7 @@ if (! empty($_GET['id'])) {
 								<?= $food['description'] ?>
                             </p>
                             <br>
-                            <a href="#" class="btn btn-primary">Order Now</a>
+                            <a href="order.php?food_id=<?= $food['id'] ?>" class="btn btn-primary">Order Now</a>
                         </div>
                      </div>
                 <?php endforeach; ?>
